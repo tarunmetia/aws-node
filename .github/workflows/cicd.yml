@@ -13,16 +13,16 @@ jobs:
       - name: Login to docker hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}     
       - name: Build Docker Image
-        run: docker build -t integrationninjas/aws-node-docker  .
+        run: docker build -t tarunmetia2025/aws-node-docker  .
       - name: Publish Image to docker hub
-        run: docker push integrationninjas/aws-node-docker:latest 
+        run: docker push tarunmetia2025/aws-node-docker:latest 
  
   deploy:
     needs: build
     runs-on: self-hosted 
     steps:
       - name: Pull image from docker hub
-        run: docker pull integrationninjas/aws-node-docker:latest 
+        run: docker pull tarunmetia2025/aws-node-docker:latest 
       - name: Delete old container
         run: docker rm -f nodejs-app-container  
       - name: Run Docker Container
