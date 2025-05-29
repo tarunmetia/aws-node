@@ -1,17 +1,3 @@
-// const express = require('express');
-// const app = express();
-// const port = 4000;
-
-// // Route for root URL
-// app.get('/api/', (req, res) => {
-//   res.send('Hello, World test 1');
-// });
-
-// // Start server
-// app.listen(port, () => {
-//   console.log(`Server is running at http://localhost:${port}`);
-// });
-
 const express = require('express');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
