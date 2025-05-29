@@ -26,4 +26,4 @@ jobs:
       - name: Delete old container
         run: docker rm -f nodejs-app-container  with .env file
       - name: Run Docker Container
-        run:  docker run -d --env-file /node-runner-etc/.env -p 4000:4000 --name nodejs-app-container tarunmetia2025/aws-node-docker:latest
+        run:  docker run -d --env-file /home/ubuntu/node-runner-etc/.env -p 4000:4000 --name nodejs-app-container tarunmetia2025/aws-node-docker:latest
