@@ -2,11 +2,11 @@ const express = require('express');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const { startStandaloneServer  } = require('@apollo/server/standalone')
-const mongoose = require('mongoose');
 const typeDefs = require('./schema/typeDefs');
 const resolvers = require('./schema/resolvers');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const {mongoConnection} = require('./mongoDb/mongoConnection')
 
 async function startServer() {
   const app = express();
@@ -24,6 +24,7 @@ async function startServer() {
   })
   console.log(`🚀 Server ready at ${url}`);
 }
+mongoConnection();
 
 startServer();
 
